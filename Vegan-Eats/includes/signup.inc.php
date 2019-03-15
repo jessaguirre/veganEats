@@ -16,16 +16,19 @@ if (isset($_POST['submit'])) {
 		header ("Location: ../signup.php?signup=empty");
 		exit();
 	} else {
+		
 		//Check if input characters are valid
 		if (!preg_match("/^[a-zA-Z]*$/", $first) || !preg_match("/^[a-zA-Z]*$/", $last)) {
 			header ("Location: ../signup.php?signup=invalid");
 			exit();
 		} else {
+				
 			//Check if email is valid
 			if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 				header ("Location: ../signup.php?signup=email");
 				exit();
 			} else {
+				
 				$sql = "SELECT * FROM users WHERE user_uid='$uid'";
 				$result = mysqli_query($conn, $sql);
 				$resultCheck = mysqli_num_rows($result);
