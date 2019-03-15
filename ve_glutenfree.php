@@ -190,10 +190,7 @@ $(document).ready(function(){
    dataType: 'json',
    success:function(data)
    {
-       data.forEach(function(recipe){
-           //put here the stuff to create the <apple> tags on the right position :D
-           //Append the comments to the correct recipes listed ^above
-           //Apprend id, which is name
+       data.forEach(function(recipe)
               let recipeID = $("#"+recipe['recipe_name'].replace(" ", "")); //removes spaces
               
             recipeID.append(
