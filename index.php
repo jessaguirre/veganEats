@@ -35,9 +35,9 @@
 		<ul>
 			<li><a href="index.php" class="Home" >Home</a></li>
 			<li><a href="ve_aboutus.html" class = "AboutUs">About Us</a></li>
-			<li><a href="ve_vegan.html" class = "VeganRecipes">Vegan Recipes</a></li>
-			<li><a href="ve_vegetarian.html" class = "VegetarianRecipes">Vegetarian Recipes</a></li>
-			<li><a href="ve_glutenfree.html" class = "GlutenFreeRecipes">Gluten Free Recipes</a></li>
+			<li><a href="ve_vegan.php" class = "VeganRecipes">Vegan Recipes</a></li>
+			<li><a href="ve_vegetarian.php" class = "VegetarianRecipes">Vegetarian Recipes</a></li>
+			<li><a href="ve_glutenfree.php" class = "GlutenFreeRecipes">Gluten Free Recipes</a></li>
 			<li><a href="ve_makeyourown.html" class = "BuildYourBite">Build Your Bite</a></li>
 			<li><a href="ve_faq.html" class = "FAQ">FAQ</a></li>
 			<li><a href="ve_contactus.html" class = "ContactUs">Contact Us</a></li>
