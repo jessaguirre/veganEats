@@ -5,7 +5,7 @@
 <html>
 <head>
 <!--
-    Home Page (ve_home.php)
+    Home Page
     Author: Nicole Blanco
     Date:   1/31/19
     Edited: Jessica Aguirre
@@ -15,7 +15,10 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <title>VeganEats</title>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
    <link href="css/main.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
 </head>
 
 
@@ -27,24 +30,35 @@
 				}
 
 			?>
+			
 	<header>
-		<img src="VeganEats logo.png" alt="VeganEats">
-	</header>
+    <img src="VeganEats logo.png" alt="VeganEats">
+  </header>
 
-	<nav class = "nav">
-		<ul>
-			<li><a href="index.php" class="Home" >Home</a></li>
-			<li><a href="ve_aboutus.html" class = "AboutUs">About Us</a></li>
-			<li><a href="ve_vegan.php" class = "VeganRecipes">Vegan Recipes</a></li>
-			<li><a href="ve_vegetarian.php" class = "VegetarianRecipes">Vegetarian Recipes</a></li>
-			<li><a href="ve_glutenfree.php" class = "GlutenFreeRecipes">Gluten Free Recipes</a></li>
-			<li><a href="ve_makeyourown.html" class = "BuildYourBite">Build Your Bite</a></li>
-			<li><a href="ve_faq.html" class = "FAQ">FAQ</a></li>
-			<li><a href="ve_contactus.html" class = "ContactUs">Contact Us</a></li>
-			<li><a href="ve_login.html" class = "Login">Log In</a></li>
-			<li><a href="ve_signup.html" class = "SignUp">Sign Up</a></li>
-		</ul>
-	</nav>
+  <nav class = "navbar is-fixed-top">
+    <div class ="container">
+      <div class ="navbar-brand">
+        <a class="navbar-item" href = "index.php" style = "font-weight:bold;">VeganEats</a>
+
+        <span class="navbar-burger" data-target="navMenu">
+          <span></span>
+          <span></span>
+        </span>
+      </div>
+    <div id="navMenu" class="navbar-menu">
+      <div class="navbar-end"> 
+      <a href="ve_aboutus.html" class = "navbar-item">About Us</a> 
+      <a href="vegan.php" class = "navbar-item">Vegan Recipes</a> 
+      <a href="v2-vegetarian.php" class = "navbar-item">Vegetarian Recipes</a> 
+      <a href="glutenfree.php" class = "navbar-item">Gluten Free Recipes</a> 
+      <a href="ve_makeyourown.html" class = "navbar-item">Build Your Bite</a> 
+      <a href="ve_faq.html" class = "navbar-item">FAQ</a> 
+      <a href="ve_contactus.html" class = "navbar-item">Contact Us</a> 
+      <a href="ve_login.html" class = "navbar-item">Log In</a> 
+      </div>
+    </div>
+  </div>  
+</nav>
      
 	 <section class = "article">
 		<div class="main-text">

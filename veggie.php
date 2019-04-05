@@ -1,64 +1,79 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
- <head>
+<head>
+<!--
+    Home Page (v2-vegetarian.php)
+    Author: Nicole Blanco
+    Date:   1/31/19
+    Edited: Jessica Aguirre
+   -->
+
    <meta charset="utf-8" />
-  <title>Vegan Eats</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
- </head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>VeganEats</title>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+   <link href="css/main.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+</head>
 
- <body>
-  <header>
-    <img src="VeganEats logo.png" alt="VeganEats">
-  </header>
+
+<body>
+	<header>
+		<img src="VeganEats logo.png" alt="VeganEats">
+	</header>
+
+	<nav class = "navbar is-fixed-top">
+		<div class ="container">
+			<div class ="navbar-brand">
+				<a class="navbar-item" href = "index.php" style = "font-weight:bold;">VeganEats</a>
+
+				<span class="navbar-burger" data-target="navMenu">
+					<span></span>
+					<span></span>
+				</span>
+			</div>
+		<div id="navMenu" class="navbar-menu">
+			<div class="navbar-end"> 
+			<a href="ve_aboutus.html" class = "navbar-item">About Us</a> 
+			<a href="ve_vegan.html" class = "navbar-item">Vegan Recipes</a> 
+			<a href="ve_vegetarian.html" class = "navbar-item">Vegetarian Recipes</a> 
+			<a href="glutenfree.php" class = "navbar-item">Gluten Free Recipes</a> 
+			<a href="ve_makeyourown.html" class = "navbar-item">Build Your Bite</a> 
+			<a href="ve_faq.html" class = "navbar-item">FAQ</a> 
+			<a href="ve_contactus.html" class = "navbar-item">Contact Us</a> 
+			<a href="ve_login.html" class = "navbar-item">Log In</a> 
+			</div>
+		</div>
+	</div>	
+</nav>
 	
-  <nav class = "navbar is-fixed-top">
-    <div class ="container">
-      <div class ="navbar-brand">
-        <a class="navbar-item" href = "index.php" style = "font-weight:bold;">VeganEats</a>
-
-        <span class="navbar-burger" data-target="navMenu">
-          <span></span>
-          <span></span>
-        </span>
-      </div>
-    <div id="navMenu" class="navbar-menu">
-      <div class="navbar-end"> 
-      <a href="ve_aboutus.html" class = "navbar-item">About Us</a> 
-      <a href="ve_vegan.html" class = "navbar-item">Vegan Recipes</a> 
-      <a href="ve_vegetarian.html" class = "navbar-item">Vegetarian Recipes</a> 
-      <a href="ve_glutenfree.php" class = "navbar-item">Gluten Free Recipes</a> 
-      <a href="ve_makeyourown.html" class = "navbar-item">Make Your Own</a> 
-      <a href="ve_faq.html" class = "navbar-item">FAQ</a> 
-      <a href="ve_contactus.html" class = "navbar-item">Contact Us</a> 
-      <a href="ve_login.html" class = "navbar-item">Log In</a> 
+	   <section class = "article">
+	   	<h1> Vegetarian Recipes </h1>
+	   	<div class="card-content">
+    <div class="media">
+      <div class="media-left">
+        <figure class="image is-1000x1000">
+          <img src="small-ve1-asparagus-pizza.jpg" alt="Grilled Asparagus Pizza with Gremolata">
+        </figure>
       </div>
     </div>
-  </div>  
-</nav>
-     
-      <article>
-		<div class="gluten-free">
-			<ul class="gluten-free-ul-class">
-				<li class="gluten-free-li-class"></li>
-			</ul>
-					<h1> Gluten Free Recipes </h1>
-					<!--8 Gluten Free Recipes will go below this line. Create a box for each one for now.-->
-					<dl id="recipes-box">
-					</dl> 
-                                        <dl id="rating-box">
-					</dl> 
-                                        <dl id="comment-box">
-                                   
-                                        </dl>
-		</div>
-	</article>
-  <br />
-  <h2 styles"align='center'">
-    <a href="#">Comment on a Recipe</a>
-    </h2>
-  <br />
+      <div class="media-content">
+        <h3>Grilled Asparagus Pizza with Gremolata</h3>
+        <p class="subtitle is-5">Light dish with fresh ingredients.</p>
+        <p class="subtitle is-6">Some of the ingredients include fresh lemon juice , parsley, oregano, and of course asparagus and gremolata!</p>
+      </div>
+    </div>
+					
+					<!--8 Vegetarian Recipes will go below this line. Create a box for each one for now.-->
+					<dl id="recipes-box"></dl> 
+                    <dl id="rating-box"></dl> 
+                    <dl id="comment-box"></dl>
+	 </section>
+
+  <section class = "recipe-description">
+  <h2>Comment on a Recipe</h2>
   <div class="container">
    <form method="POST" id="comment_form">
     <div class="form-group">
@@ -77,15 +92,18 @@
      <textarea name="comment_content" id="comment_content" class="form-control" placeholder="Enter Comment" rows="5"></textarea>
     </div>
     <div class="form-group">
-     <input type="hidden" name="comment_id" id="comment_id" value="0" />
-     <input type="submit" name="submit" id="submit" class="btn btn-info" value="Submit" />
+     <input type="hidden" name="comment_id" id="comment_id" value="0"/>
+     <input type="submit" name="submit" id="submit" class="btn btn-info" value="Submit"/>
     </div>
    </form>
    <span id="comment_message"></span>
    <br />
    <div id="display_comment"></div>
   </div>
+</section>
  </body>
+
+	<!-- footer -->
  <footer>
       <h3>Social Media</h3>
     <nav>
@@ -99,17 +117,12 @@
 
 <script>
 $(document).ready(function(){
-
    //Object that is used to fill the "recipes-box" and "ddlViewBy"
    var selectValues = {
           'gluten_Recipe 1': 'Description of Recipe 1',
           'gluten_Recipe 2': 'Description of Recipe 2',
           'gluten_Recipe 3': 'Description of Recipe 3',
-          'gluten_Recipe 4': 'Description of Recipe 4',
-          'gluten_Recipe 5': 'Description of Recipe 5',
-          'gluten_Recipe 6': 'Description of Recipe 6',
-          'gluten_Recipe 7': 'Description of Recipe 7',
-          'gluten_Recipe 8': 'Description of Recipe 8'
+          'gluten_Recipe 4': 'Description of Recipe 4'
         };
         
         //The ID of the DL that is used to put the Recipes in       
@@ -121,12 +134,14 @@ $(document).ready(function(){
           //Foreach loop that loops throught the Object that contains the deired values to write
           $.each(selectValues, function(key,value) {
           //This sdds the "DT" tags in the recipesbox, and filles them with the key "The left part of the object" for both the ID and the text
-            let id = key.replace(" ", "");
+            var id = key.replace(" ", "");
             
             recipesbox.append(
                 $('<div></div>')
                 .attr("id", id)
+                .attr("class", "recipe_div")
             );
+            
               $('#'+id).append(
                 $('<dt></dt>')
               .text(key)
@@ -193,7 +208,7 @@ $(document).ready(function(){
       });
 
  load_comment();
-
+ 
  function load_comment()
  {
   $.ajax({
@@ -202,8 +217,8 @@ $(document).ready(function(){
    dataType: 'json',
    success:function(data)
    {
-       data.forEach(function(recipe)
-              let recipeID = $("#"+recipe['recipe_name'].replace(" ", "")); //removes spaces
+       data.forEach(function(recipe){
+              var recipeID = $("#"+recipe['recipe_name'].replace(" ", "")); //removes spaces
               
             recipeID.append(
               $('<dt></dt>')
@@ -219,15 +234,13 @@ $(document).ready(function(){
             ); 
        });
    }
-  }
+  });
  }
-
- $(document).on('click', '.reply', function(){
+ 
+$(document).on('click', '.reply', function(){
   var comment_id = $(this).attr("id");
   $('#comment_id').val(comment_id);
   $('#comment_name').focus();
  });
- 
-;
+});
 </script>
-

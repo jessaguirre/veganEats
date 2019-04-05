@@ -1,18 +1,29 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
- <head>
-   <meta charset="utf-8" />
-  <title>Vegan Eats</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
- </head>
+<head>
+<!--
+    Home Page (v2-vegetarian.php)
+    Author: Nicole Blanco
+    Date:   1/31/19
+    Edited: Jessica Aguirre
+   -->
 
- <body>
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>VeganEats</title>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+   <link href="css/main.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+</head>
+
+
+<body>
   <header>
     <img src="VeganEats logo.png" alt="VeganEats">
   </header>
-	
+
   <nav class = "navbar is-fixed-top">
     <div class ="container">
       <div class ="navbar-brand">
@@ -26,10 +37,10 @@
     <div id="navMenu" class="navbar-menu">
       <div class="navbar-end"> 
       <a href="ve_aboutus.html" class = "navbar-item">About Us</a> 
-      <a href="ve_vegan.html" class = "navbar-item">Vegan Recipes</a> 
-      <a href="ve_vegetarian.html" class = "navbar-item">Vegetarian Recipes</a> 
-      <a href="ve_glutenfree.php" class = "navbar-item">Gluten Free Recipes</a> 
-      <a href="ve_makeyourown.html" class = "navbar-item">Make Your Own</a> 
+      <a href="vegan.php" class = "navbar-item">Vegan Recipes</a> 
+      <a href="v2-vegetarian.php" class = "navbar-item">Vegetarian Recipes</a> 
+      <a href="glutenfree.php" class = "navbar-item">Gluten Free Recipes</a> 
+      <a href="ve_makeyourown.html" class = "navbar-item">Build Your Bite</a> 
       <a href="ve_faq.html" class = "navbar-item">FAQ</a> 
       <a href="ve_contactus.html" class = "navbar-item">Contact Us</a> 
       <a href="ve_login.html" class = "navbar-item">Log In</a> 
@@ -37,28 +48,25 @@
     </div>
   </div>  
 </nav>
-     
-      <article>
-		<div class="gluten-free">
-			<ul class="gluten-free-ul-class">
-				<li class="gluten-free-li-class"></li>
-			</ul>
-					<h1> Gluten Free Recipes </h1>
-					<!--8 Gluten Free Recipes will go below this line. Create a box for each one for now.-->
-					<dl id="recipes-box">
-					</dl> 
-                                        <dl id="rating-box">
-					</dl> 
-                                        <dl id="comment-box">
-                                   
-                                        </dl>
-		</div>
-	</article>
-  <br />
-  <h2 styles"align='center'">
-    <a href="#">Comment on a Recipe</a>
-    </h2>
-  <br />
+
+
+  <section class = "article">
+    <div class="gluten-free">
+      <ul class="gluten-free-ul-class">
+        <li class="gluten-free-li-class"></li>
+      </ul>
+          <h1> Vegan Recipes </h1>
+          <!--8 Gluten Free Recipes will go below this line. Create a box for each one for now.-->
+          <dl id="recipes-box">
+            
+          </dl> 
+          <dl id="rating-box"></dl> 
+          <dl id="comment-box"></dl>
+    </div>
+  
+
+  <h2>Comment on a Recipe</h2>
+  <br/>
   <div class="container">
    <form method="POST" id="comment_form">
     <div class="form-group">
@@ -85,7 +93,10 @@
    <br />
    <div id="display_comment"></div>
   </div>
+  </section>
  </body>
+
+  <!-- footer -->
  <footer>
       <h3>Social Media</h3>
     <nav>
@@ -99,17 +110,12 @@
 
 <script>
 $(document).ready(function(){
-
    //Object that is used to fill the "recipes-box" and "ddlViewBy"
    var selectValues = {
-          'gluten_Recipe 1': 'Description of Recipe 1',
-          'gluten_Recipe 2': 'Description of Recipe 2',
-          'gluten_Recipe 3': 'Description of Recipe 3',
-          'gluten_Recipe 4': 'Description of Recipe 4',
-          'gluten_Recipe 5': 'Description of Recipe 5',
-          'gluten_Recipe 6': 'Description of Recipe 6',
-          'gluten_Recipe 7': 'Description of Recipe 7',
-          'gluten_Recipe 8': 'Description of Recipe 8'
+          'Vegan_Mac_and_Cheese': 'Super Healthy',
+          'Spring_Vegetable_Lo_Mein': 'Veggilicious',
+          'Butternut_Squash_Linguine': 'Creamy and delicious',
+          'Vegan_Burrito_Bowl': 'Super easy and flavorful'
         };
         
         //The ID of the DL that is used to put the Recipes in       
@@ -121,11 +127,12 @@ $(document).ready(function(){
           //Foreach loop that loops throught the Object that contains the deired values to write
           $.each(selectValues, function(key,value) {
           //This sdds the "DT" tags in the recipesbox, and filles them with the key "The left part of the object" for both the ID and the text
-            let id = key.replace(" ", "");
+            var id = key.replace(" ", "");
             
             recipesbox.append(
                 $('<div></div>')
                 .attr("id", id)
+                .attr("class", "recipe_div")
             );
               $('#'+id).append(
                 $('<dt></dt>')
@@ -193,7 +200,7 @@ $(document).ready(function(){
       });
 
  load_comment();
-
+ 
  function load_comment()
  {
   $.ajax({
@@ -202,8 +209,8 @@ $(document).ready(function(){
    dataType: 'json',
    success:function(data)
    {
-       data.forEach(function(recipe)
-              let recipeID = $("#"+recipe['recipe_name'].replace(" ", "")); //removes spaces
+       data.forEach(function(recipe){
+              var recipeID = $("#"+recipe['recipe_name'].replace(" ", "")); //removes spaces
               
             recipeID.append(
               $('<dt></dt>')
@@ -219,15 +226,14 @@ $(document).ready(function(){
             ); 
        });
    }
-  }
+  });
  }
-
- $(document).on('click', '.reply', function(){
+ 
+$(document).on('click', '.reply', function(){
   var comment_id = $(this).attr("id");
   $('#comment_id').val(comment_id);
   $('#comment_name').focus();
  });
- 
-;
+});
 </script>
 

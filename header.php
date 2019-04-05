@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>login system</title>
+	<!-- <title>login system</title> -->
 	<link rel="stylesheet" type="text/css" href="style1.css">
 </head>
 <body>
@@ -32,7 +32,7 @@
 									<input type="password" name="pwd" placeholder="password">
 									<button type="submit" name="submit">Login</button>
 									</form>
-									<a href="signup.php">Sing up</a>';
+									<a href="signup.php">Sign up</a>';
 						}
 					?>
 				</div>
