@@ -1,83 +1,71 @@
-<?php
-//index.php
-
-?>
-<!DOCTYPE html>
+<?php 
+	include_once 'header.php';
+ ?>
+<!doctype html>
 <html>
- <head>
-  <title>Comment System using PHP and Ajax</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
- </head>
- <body>
-  <br />
-  <h2 align="center"><a href="#">Comment System using PHP and Ajax</a></h2>
-  <br />
-  <div class="container">
-   <form method="POST" id="comment_form">
-    <div class="form-group">
-     <input type="text" name="comment_name" id="comment_name" class="form-control" placeholder="Enter Name" />
-    </div>
-    <div class="form-group">
-     <textarea name="comment_content" id="comment_content" class="form-control" placeholder="Enter Comment" rows="5"></textarea>
-    </div>
-    <div class="form-group">
-     <input type="hidden" name="comment_id" id="comment_id" value="0" />
-     <input type="submit" name="submit" id="submit" class="btn btn-info" value="Submit" />
-    </div>
-   </form>
-   <span id="comment_message"></span>
-   <br />
-   <div id="display_comment"></div>
-  </div>
- </body>
+<head>
+<!--
+    Home Page (ve_home.php)
+    Author: Nicole Blanco
+    Date:   1/31/19
+    Edited: Jessica Aguirre
+   -->
+
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>VeganEats</title>
+   <link href="css/main.css" rel="stylesheet">
+</head>
+
+
+<body>
+	<?php  
+
+				if (isset($_SESSION['u_id'])) {
+					echo "You are logged in!";
+				}
+
+			?>
+	<header>
+		<img src="VeganEats logo.png" alt="VeganEats">
+	</header>
+
+	<nav class = "nav">
+		<ul>
+			<li><a href="index.php" class="Home" >Home</a></li>
+			<li><a href="ve_aboutus.html" class = "AboutUs">About Us</a></li>
+			<li><a href="ve_vegan.php" class = "VeganRecipes">Vegan Recipes</a></li>
+			<li><a href="ve_vegetarian.php" class = "VegetarianRecipes">Vegetarian Recipes</a></li>
+			<li><a href="ve_glutenfree.php" class = "GlutenFreeRecipes">Gluten Free Recipes</a></li>
+			<li><a href="ve_makeyourown.html" class = "BuildYourBite">Build Your Bite</a></li>
+			<li><a href="ve_faq.html" class = "FAQ">FAQ</a></li>
+			<li><a href="ve_contactus.html" class = "ContactUs">Contact Us</a></li>
+			<li><a href="ve_login.html" class = "Login">Log In</a></li>
+			<li><a href="ve_signup.html" class = "SignUp">Sign Up</a></li>
+		</ul>
+	</nav>
+     
+	 <section class = "article">
+		<div class="main-text">
+			<!-- <ul class="main-text-of-page"> -->
+			<!-- <li class="site-welcome"></li> -->
+			<!-- </ul> -->
+			<p>Welcome to the homepage of VeganEats! If you have any recipes of your own to share, check out our Build Your Bite generator where we have our custom made Recipe Creator. Create an account now!</p>
+		</div>
+	</section>
+</body>
+
+  <section class = "footer">
+      <h3>Social Media</h3>
+<div id = "social">
+<ul>
+<li><a href="#">Twitter</a></li>
+<li><a href="#">Instagram</a></li>
+</ul>
+</div>
+   </section>
 </html>
-
-<script>
-$(document).ready(function(){
- 
- $('#comment_form').on('submit', function(event){
-  event.preventDefault();
-  var form_data = $(this).serialize();
-  $.ajax({
-   url:"add_comment.php",
-   method:"POST",
-   data:form_data,
-   dataType:"JSON",
-   success:function(data)
-   {
-    if(data.error != '')
-    {
-     $('#comment_form')[0].reset();
-     $('#comment_message').html(data.error);
-     $('#comment_id').val('0');
-     load_comment();
-    }
-   }
-  })
- });
-
- load_comment();
-
- function load_comment()
- {
-  $.ajax({
-   url:"fetch_comment.php",
-   method:"POST",
-   success:function(data)
-   {
-    $('#display_comment').html(data);
-   }
-  })
- }
-
- $(document).on('click', '.reply', function(){
-  var comment_id = $(this).attr("id");
-  $('#comment_id').val(comment_id);
-  $('#comment_name').focus();
- });
- 
-});
-</script>
-
+<?php 
+	include_once 'footer.php';
+?>

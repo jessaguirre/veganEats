@@ -16,7 +16,7 @@
 </head>
 <body>
   <header>
-	<a href="ve_home.html"><img src="#" alt="Vegie Eats banner" />
+	<a href="index.php"><img src="#" alt="Vegie Eats banner" />
 	 <link href="#.css" rel="stylesheet" type="text/css">
 	<nav>
 		<ul>

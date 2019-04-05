@@ -9,11 +9,11 @@
  </head>
  <body>
      <header>
-	 <a href="ve_home.html"><img src="#" alt="Vegie Eats banner" />
+	 <a href="index.php"><img src="VeganEats logo.png" alt="Vegie Eats banner" />
 	 <link href="#.css" rel="stylesheet" type="text/css">
 	<nav>
 		<ul>
-			<li><a href="ve_home.html" class="Home" >Home</a></li>
+			<li><a href="index.php" class="Home" >Home</a></li>
 			<li><a href="ve_aboutus.html" class = "AboutUs">About Us</a></li>
 			<li><a href="ve_vegan.html" class = "VeganRecipes">Vegan Recipes</a></li>
 			<li><a href="ve_vegetarian.html" class = "VegetarianRecipes">Vegetarian Recipes</a></li>
@@ -190,10 +190,7 @@ $(document).ready(function(){
    dataType: 'json',
    success:function(data)
    {
-       data.forEach(function(recipe){
-           //put here the stuff to create the <apple> tags on the right position :D
-           //Append the comments to the correct recipes listed ^above
-           //Apprend id, which is name
+       data.forEach(function(recipe)
               let recipeID = $("#"+recipe['recipe_name'].replace(" ", "")); //removes spaces
               
             recipeID.append(
@@ -210,7 +207,7 @@ $(document).ready(function(){
             ); 
        });
    }
-  })
+  }
  }
 
  $(document).on('click', '.reply', function(){
@@ -219,6 +216,6 @@ $(document).ready(function(){
   $('#comment_name').focus();
  });
  
-});
+;
 </script>
 

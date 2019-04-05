@@ -2,22 +2,28 @@
 <html>
 <head>
 <!--
-    Vegan Recipes Page (ve_vegan.html)
+    Home Page (index.php)
     Author: Nicole Blanco
     Date:   1/31/19
+    Edited: Jessica Aguirre
    -->
 
    <meta charset="utf-8" />
-   <title>Vegie Eats</title>
-
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>VeganEats</title>
+   <link href="css/main.css" rel="stylesheet">
 </head>
+
+
 <body>
-  <header>
-	 <a href="ve_home.html"><img src="#" alt="Vegie Eats banner" />
-	 <link href="#.css" rel="stylesheet" type="text/css">
-	<nav>
+	<header>
+		<img src="VeganEats logo.png" alt="VeganEats">
+	</header>
+
+	<nav class = "nav">
 		<ul>
-			<li><a href="ve_home.html" class="Home" >Home</a></li>
+			<li><a href="index.php" class="Home" >Home</a></li>
 			<li><a href="ve_aboutus.html" class = "AboutUs">About Us</a></li>
 			<li><a href="ve_vegan.html" class = "VeganRecipes">Vegan Recipes</a></li>
 			<li><a href="ve_vegetarian.html" class = "VegetarianRecipes">Vegetarian Recipes</a></li>
@@ -29,8 +35,8 @@
 			<li><a href="ve_signup.html" class = "SignUp">Sign Up</a></li>
 		</ul>
 	</nav>
-     </header>
-	 <article>
+	
+	 <section class = "article">
 		<div class="vegan">
 			<ul class="vegan-ul-class">
 				<li class="vegan-li-class">Delicious Vegan Recipes</li>
@@ -38,22 +44,14 @@
 					<h1> Vegan Recipes </h1>
 					<!--8 vegan Recipes will go below this line. Create a box for each one for now.-->
 					<dl>
-						<dt>Recipe 1</dt>
-						<dd>Description of Recipe 1</dd>
-						<dt>Recipe 2</dt>
-						<dd>Description of Recipe 2</dd>
+						<dt>SPRING VEGETABLE LO MEIN</dt>
+						<dd>INGREDIENTS</dd>
+						<dt>Vegan Mac and Cheese </dt>
+						<dd>INGREDIENTS</dd>
 						<dt>Recipe 3</dt>
 						<dd>Description of Recipe 3</dd>
 						<dt>Recipe 4</dt>
 						<dd>Description of Recipe 4</dd>
-						<dt>Recipe 5</dt>
-						<dd>Description of Recipe 5</dd>
-						<dt>Recipe 6</dt>
-						<dd>Description of Recipe 6</dd>
-						<dt>Recipe 7</dt>
-						<dd>Description of Recipe 7</dd>
-						<dt>Recipe 8</dt>
-						<dd>Description of Recipe 8</dd>
 					</dl>
 					<form action="/action_page.php" id="userform">
 						Name: <input type="text" name="username">
