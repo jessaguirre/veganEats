@@ -2,7 +2,7 @@
 
 //add_comment.php
 
-$connect = new PDO('mysql:host=localhost:3306;dbname=comment', 'phpmyadmin', 'VeganOcean2k19');
+$connect = new PDO('mysql:host=localhost:3306;dbname=comment', 'root', '');
 
 $error = '';
 $comment_name = '';

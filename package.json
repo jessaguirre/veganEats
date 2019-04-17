@@ -21,5 +21,8 @@
     "gulp": "^4.0.0",
     "gulp-sass": "^4.0.2",
     "gulp-watch": "^5.0.1"
+  },
+  "dependencies": {
+    "bulma": "^0.7.4"
   }
 }

@@ -2,7 +2,7 @@
 
 //fetch_comment.php
 
-$connect = new PDO('mysql:host=localhost;dbname=comment', 'phpmyadmin', 'VeganOcean2k19');
+$connect = new PDO('mysql:host=localhost;dbname=comment', 'root', '');
 
 $query = "
 SELECT * FROM tbl_comment 

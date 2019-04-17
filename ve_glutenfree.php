@@ -7,25 +7,37 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
  </head>
+
  <body>
-     <header>
-	 <a href="index.php"><img src="VeganEats logo.png" alt="Vegie Eats banner" />
-	 <link href="#.css" rel="stylesheet" type="text/css">
-	<nav>
-		<ul>
-			<li><a href="index.php" class="Home" >Home</a></li>
-			<li><a href="ve_aboutus.html" class = "AboutUs">About Us</a></li>
-			<li><a href="ve_vegan.html" class = "VeganRecipes">Vegan Recipes</a></li>
-			<li><a href="ve_vegetarian.html" class = "VegetarianRecipes">Vegetarian Recipes</a></li>
-			<li><a href="ve_glutenfree.html" class = "GlutenFreeRecipes">Gluten Free Recipes</a></li>
-			<li><a href="ve_makeyourown.html" class = "MakeYourOwn">Make Your Own</a></li>
-			<li><a href="ve_faq.html" class = "FAQ">FAQ</a></li>
-			<li><a href="ve_contactus.html" class = "ContactUs">Contact Us</a></li>
-			<li><a href="ve_login.html" class = "Login">Log In</a></li>
-			<li><a href="ve_signup.html" class = "SignUp">Sign Up</a></li>
-		</ul>
-	</nav>
-     </header>
+  <header>
+    <img src="VeganEats logo.png" alt="VeganEats">
+  </header>
+	
+  <nav class = "navbar is-fixed-top">
+    <div class ="container">
+      <div class ="navbar-brand">
+        <a class="navbar-item" href = "index.php" style = "font-weight:bold;">VeganEats</a>
+
+        <span class="navbar-burger" data-target="navMenu">
+          <span></span>
+          <span></span>
+        </span>
+      </div>
+    <div id="navMenu" class="navbar-menu">
+      <div class="navbar-end"> 
+      <a href="ve_aboutus.html" class = "navbar-item">About Us</a> 
+      <a href="ve_vegan.html" class = "navbar-item">Vegan Recipes</a> 
+      <a href="ve_vegetarian.html" class = "navbar-item">Vegetarian Recipes</a> 
+      <a href="ve_glutenfree.php" class = "navbar-item">Gluten Free Recipes</a> 
+      <a href="ve_makeyourown.html" class = "navbar-item">Make Your Own</a> 
+      <a href="ve_faq.html" class = "navbar-item">FAQ</a> 
+      <a href="ve_contactus.html" class = "navbar-item">Contact Us</a> 
+      <a href="ve_login.html" class = "navbar-item">Log In</a> 
+      </div>
+    </div>
+  </div>  
+</nav>
+     
       <article>
 		<div class="gluten-free">
 			<ul class="gluten-free-ul-class">
@@ -41,7 +53,7 @@
                                    
                                         </dl>
 		</div>
-	<article>
+	</article>
   <br />
   <h2 styles"align='center'">
     <a href="#">Comment on a Recipe</a>
