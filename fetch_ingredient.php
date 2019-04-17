@@ -5,8 +5,7 @@
 $connect = new PDO('mysql:host=localhost;dbname=loginsystem', 'phpmyadmin', 'VeganOcean2k19');
 
 $query = "
-SELECT * FROM tbl_comment
-ORDER BY comment_id DESC
+SELECT * FROM ingredient
 ";
 
 $statement = $connect->prepare($query);

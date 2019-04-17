@@ -13,7 +13,7 @@
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <title>VeganEats</title>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-   <link href="css/main.css" rel="stylesheet">
+   <link href="css/inner.css" rel="stylesheet">
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
 </head>
@@ -38,12 +38,12 @@
       <div class="navbar-end"> 
       <a href="ve_aboutus.html" class = "navbar-item">About Us</a> 
       <a href="vegan.php" class = "navbar-item">Vegan Recipes</a> 
-      <a href="v2-vegetarian.php" class = "navbar-item">Vegetarian Recipes</a> 
+      <a href="vegetarian.php" class = "navbar-item">Vegetarian Recipes</a> 
       <a href="glutenfree.php" class = "navbar-item">Gluten Free Recipes</a> 
-      <a href="ve_makeyourown.html" class = "navbar-item">Build Your Bite</a> 
+      <a href="ve_makeyourown.php" class = "navbar-item">Build Your Bite</a> 
       <a href="ve_faq.html" class = "navbar-item">FAQ</a> 
       <a href="ve_contactus.html" class = "navbar-item">Contact Us</a> 
-      <a href="ve_login.html" class = "navbar-item">Log In</a> 
+      <a href="signup.php" class = "navbar-item">Sign Up</a> 
       </div>
     </div>
   </div>  
@@ -51,61 +51,73 @@
 
 
   <section class = "article">
-		<div class="gluten-free">
-			<ul class="gluten-free-ul-class">
-				<li class="gluten-free-li-class"></li>
-			</ul>
-					<h1> Gluten Free Recipes </h1>
-					<!--8 Gluten Free Recipes will go below this line. Create a box for each one for now.-->
-					<dl id="recipes-box">
-            
-          </dl> 
-          <dl id="rating-box"></dl> 
-          <dl id="comment-box"></dl>
-		</div>
-	
+            <h1> Gluten Free Recipes </h1>
+            <!--8 Gluten Free Recipes will go below this line. Create a box for each one for now.-->
+            <dl id="recipes-box">
+              <!-- <div id="card-content"></div> -->
+            </dl> 
+            <dl id="rating-box"></dl> 
+            <dl id="comment-box"></dl>
+      </div>
+    
 
-  <h2>Comment on a Recipe</h2>
-  <br/>
-  <div class="container">
-   <form method="POST" id="comment_form">
-    <div class="form-group">
-     <input type="text" name="comment_name" id="comment_name" class="form-control" placeholder="Enter Name" />
-    </div>
-       <div class="form-group">
-        <select name="selected_recipe" id="ddlViewBy">
-        </select>
-       </div>
-        <div class="form-group">
-            <select name="rating" id="ratingViewBy">
-            </select>
+    <h2>Comment on a Recipe</h2>
+    <div class="container">
+      <div class="main-text">
+        <div class="control">
+     <form method="POST" id="comment_form">
+      <div class="form-group">
+       <input class="input" type="text" name="comment_name" id="comment_name" class="form-control" placeholder="Please enter your name." width:0>
+      </div>
+         <div class="form-group">
+          <div class="select">
+              <select class="is-hovered" name="selected_recipe" id="ddlViewBy"></select>
         </div>
-       
-    <div class="form-group">
-     <textarea name="comment_content" id="comment_content" class="form-control" placeholder="Enter Comment" rows="5"></textarea>
-    </div>
-    <div class="form-group">
-     <input type="hidden" name="comment_id" id="comment_id" value="0" />
-     <input type="submit" name="submit" id="submit" class="btn btn-info" value="Submit" />
-    </div>
-   </form>
-   <span id="comment_message"></span>
-   <br />
-   <div id="display_comment"></div>
+      </div>
+          <div class="form-group">
+            <div class="select">
+              <select class="is-hovered" name="rating" id="ratingViewBy">
+              </select>
+          </div>
+        </div>
+         
+      <div class="form-group">
+       <textarea class="textarea has-fixed-size" name="comment_content" id="comment_content" class="form-control" placeholder="Comment on a recipe here!" rows="5"></textarea>
+      </div>
+      <div class="form-group">
+       <input type="hidden" name="comment_id" id="comment_id" value="0" />
+       <input type="submit" name="submit" id="submit" class="button" value="Submit" />
+      </div>
+     </form>
+     <span id="comment_message"></span>
+     <div id="display_comment"></div>
   </div>
-  </section>
+  </div>
+  </div>
+    </section>
  </body>
 
   <!-- footer -->
- <footer>
-      <h3>Social Media</h3>
-    <nav>
-      <ul>
-         <li><a href="#">Twitter</a></li>
-         <li><a href="#">Instagram</a></li>
-     </ul>
-    </nav>
-   </footer>
+ <section class = "footer">
+     <h3>Social Media</h3>
+ <div id = "social">
+   <div class="columns">
+
+   <div class="column">
+   <figure class="image is-24x24">
+   <img src="social-twitter.svg">
+ </figure>
+ </div>
+
+   <div class="column">
+   <figure class="image is-24x24">
+   <img src="social-instagram.svg">
+ </figure>
+ </div>
+
+ </div>
+ </div>
+    </section>
 </html>
 
 <script>

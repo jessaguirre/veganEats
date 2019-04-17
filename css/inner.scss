@@ -4,7 +4,6 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
 
 
-
 // brand colors
     $body-color: #354045;
     $green: #B6D88F;
@@ -29,7 +28,7 @@ $borders: 15px;
 
 
 @mixin desktop {
-    @media (max-width: 100px) {
+    @media (max-width: 1000px) {
         @content;
     }
 }
@@ -38,87 +37,68 @@ body, html {
     height: 100%;
 }
 
-.article, .recipe_div {
+.article {
     font-family: 'Montserrat';
-    
+    //margin: 0;
     background-color: $light-green;
-    
+    //text-align: center;
     .container {
         margin: 0 10px;
         position: relative;
-    }
-
-    .card-content {
-        background-color: $link; 
-          max-width: 30%;
-          border: 1em;
-
-        }
-        
+    }   
         p {
-            font-size: 1.38em;
-            //display: inline-flex;
-            padding: 0.5em 2em;
-            text-align: center;
-            
-            a {
-            color: $blue;
-            text-decoration: underline;
-            //font-weight: bold;
-            display: block;
-            //text-align: center;
-        }
+            font-size: 1em;
+            display: inline-flex;
+            padding: 14px;
             
         }
 
         h1 {
             font-size: 2.1em;
-            // max-width: 500px;
+            max-width: 500px;
             padding: 14px;
             color: $dark-green;
             font-weight: bold;
-            text-align: center;
         }
 
         h2 {
             font-size: 1.9em;
-            // max-width: 500px;
+            max-width: 500px;
             padding: 14px;
             font-weight: bold;
-            text-align: center;
             
         }
         h3 {
             font-size: 1.6em;
-            // max-width: 500px;
+            max-width: 500px;
             padding: 14px;
             text-align: center;
             font-weight: bold;
             color: $dark-green;
-            text-align: center;
         }
         h4 {
             font-size: 1.4em;
-            // max-width: 500px;
+            max-width: 500px;
             padding: 10px;
             text-align: center;
             font-weight: bold;
             color: $green-bg;
         }
-        a {
+          a {
             color: $blue;
-            text-decoration: underline;
+            border-radius: $borders;
+            text-decoration: none;
             font-weight: bold;
-            //display: block;
-            //text-align: center;
+            display: block;
+            text-align: center;
+            margin: 5px auto 0 auto;
+
+            @include desktop {
+                display: inline-block;
+                //padding: $padding $padding * 4;
+            }
         }
         
-    }
-
-    .main-text{
-        margin-inline-start: 2em;
-        //display: inline-block;
-        text-align: center;
     }
 
     header {
@@ -128,47 +108,43 @@ body, html {
         display: block;
     }
 
-        .navbar.is-fixed-top {
+    .navbar.is-fixed-top {
         background-color: yellowgreen;
-        .navbar-menu {
+    .navbar-menu {
         //margin: 0 10px;
         background-color: $green-bg;
         
-        .navbar-item {
+      .navbar-item {
         font-weight: bold;
         background-color: $green;
-         }
+      }
 
-        .has-dropdown .navbar-item {
+      .has-dropdown .navbar-item {
         text-transform: none;
         background-color: $green;
-        }
+      }
 
-        .container {
+      .container {
           margin: 0 10px;
-        position: relative;
-        }
-        }
+          position: relative;
+      }
     }
-        .nav-login{
-            color: #4a4a4a;
-            font-size: 1rem;
-            font-weight: 400;
-            line-height: 1.5;
-            margin: 3.2em 0px 0 0;
-           } 
-
-            .hvr-pop{
-                margin: .4em;
-                    padding: .2em 2em;
-                    font-weight: bold;
-                    cursor: pointer;
-                    background: #e1e1e1;
-                    text-decoration: none;
-                    color: $blue;
-                    -webkit-tap-highlight-color: rgba(0,0,0,0);
-                    -webkit-font-smoothing: antialiased;
-            }
+}
+    .main-text{
+        margin-inline-start: 2em;
+        
+        .input, .textarea {
+            background-color: #fff;
+            border-color: #dbdbdb;
+            color: #363636;
+            box-shadow: inset 0 1px 2px rgba(10,10,10,.1);
+            min-width: 0;
+            width: 28%;
+        }
+        .form-group{
+          padding: 0.3em;
+        }
+    }    
 
     .recipe-description{
     background-color: $green;
@@ -178,7 +154,45 @@ body, html {
         margin: 1rem 2rem;
     }
 
-    .footer{
+    dl#recipes-box {
+      display: inline-block;
+      margin: 0 4.2em;
+      
+    div.recipe_div{
+      max-width: max-content;
+      margin-right: 1em;
+      line-height: 2;
+      background-color: $yellow;
+      position: relative;
+      border: 2px outset;
+      box-shadow: $card-shadow;
+    }
+
+    dl{
+        font-size: .8em;
+        color: $green;
+    }
+
+    dt {
+      font-size: 1.48em;
+      color: $green-bg;
+      text-decoration: underline;
+      margin: .60em .60em 0em;
+      line-height: 2;
+      }
+    dd{
+      font-size: 1.30em;
+      margin: 0em .60em;
+      line-height: 2;
+    }
+    .card-content {
+        background-color: $dark-green; 
+          max-width: 30%;
+          border: 1em;
+    }  
+  }
+
+  .footer{
         background-color: $footer-bg;
         
          h3 {
@@ -205,3 +219,4 @@ body, html {
         padding: 0.55rem;
         }
     }
+
