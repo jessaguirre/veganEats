@@ -1,3 +1,8 @@
+<?php
+
+  session_start();
+
+?>
 <!doctype html>
 <html>
 <head>
@@ -62,6 +67,14 @@
     
 
     <h2>Comment on a Recipe</h2>
+
+
+     <?php
+           
+           if(isset($_SESSION['u_uid'])){
+
+    ?>
+
     <div class="container">
       <div class="main-text">
         <div class="control">
@@ -94,6 +107,18 @@
   </div>
   </div>
   </div>
+
+   <?php
+
+      }else{
+       
+          echo '<h3 style="color:red;">Please login to leave a comment on the receipe...</h3>';
+
+      }
+
+  ?>
+
+
     </section>
  </body>
 
@@ -117,6 +142,9 @@
 
  </div>
  </div>
+
+
+
     </section>
 </html>
 
@@ -231,6 +259,10 @@ $(document).ready(function(){
             recipeID.append(
              $('<dt></dt>')
               .text(recipe["comment"])
+            );
+            recipeID.append(
+             $('<dt></dt>')
+              .html('Comment Posted By: <b style="color:green;">'+recipe["user_username"]+'</b>')
             );
              recipeID.append(
                 $('<dd></dd>')
