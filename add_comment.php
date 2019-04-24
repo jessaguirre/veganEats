@@ -2,7 +2,13 @@
 
 //add_comment.php
 
+
+session_start();
+
 $connect = new PDO('mysql:host=localhost:3306;dbname=loginsystem', 'phpmyadmin', 'VeganOcean2k19');
+
+// $connect = new PDO('mysql:host=localhost;dbname=loginsystem', 'root', 'root');
+
 
 $error = '';
 $comment_name = '';
@@ -33,13 +39,14 @@ if($error == '')
         
         $query = "
         INSERT INTO tbl_comment 
-        (comment_id, recipe_name, rating, comment, comment_sender_name) 
-        VALUES (:comment_id, :recipe_name, :rating, :comment, :comment_sender_name)
+        (comment_id, user_username ,recipe_name, rating, comment, comment_sender_name) 
+        VALUES (:comment_id, :user_username ,:recipe_name, :rating, :comment, :comment_sender_name)
         ";
         $statement = $connect->prepare($query);
         $statement->execute(
          array(
           ':comment_id' => $_POST["comment_id"],
+          ':user_username' => $_SESSION["u_uid"],
           ':recipe_name' => $_POST["selected_recipe"],
           ':rating' => $rating[0],
           ':comment' => $comment_content,
