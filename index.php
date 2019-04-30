@@ -30,17 +30,14 @@
 				}
 
 			?>
-			
-	<header>
-    <img src="VeganEats logo.png" alt="VeganEats">
-  </header>
-
+  
   <nav class = "navbar is-fixed-top">
     <div class ="container">
       <div class ="navbar-brand">
-        <a class="navbar-item" href = "index.php" style = "font-weight:bold;">VeganEats</a>
-
-        <span class="navbar-burger" data-target="navMenu">
+        <a class="navbar-item" href = "index.php">
+          <img src = "navLogo.png" alt= "Logo" width="105" height="28">
+        </a>
+        <span class="navbar-burger burger" data-target="navMenu">
           <span></span>
           <span></span>
         </span>
@@ -49,23 +46,42 @@
       <div class="navbar-end"> 
       <a href="ve_aboutus.html" class = "navbar-item">About Us</a> 
       <a href="vegan.php" class = "navbar-item">Vegan Recipes</a> 
-      <a href="v2-vegetarian.php" class = "navbar-item">Vegetarian Recipes</a> 
+      <a href="veggie_recipe_copy.php" class = "navbar-item">Vegetarian Recipes</a> 
       <a href="glutenfree.php" class = "navbar-item">Gluten Free Recipes</a> 
-      <a href="ve_makeyourown.html" class = "navbar-item">Build Your Bite</a> 
+      <a href="builder.php" class = "navbar-item">Build Your Bite</a> 
       <a href="ve_faq.html" class = "navbar-item">FAQ</a> 
-      <a href="ve_contactus.html" class = "navbar-item">Contact Us</a> 
-      <a href="ve_login.html" class = "navbar-item">Log In</a> 
+      <a href="signup.php" class = "navbar-item">Sign Up</a> 
       </div>
     </div>
-  </div>  
-</nav>
+  </div>
+  </nav>
      
 	 <section class = "article">
+      <header id = "hero">
+    <img src="VeganEats logo.png" alt="VeganEats" id="hero-image">
+  </header>
 		<div class="main-text">
 			<!-- <ul class="main-text-of-page"> -->
 			<!-- <li class="site-welcome"></li> -->
 			<!-- </ul> -->
-			<p>Welcome to the homepage of VeganEats! If you have any recipes of your own to share, check out our Build Your Bite generator where we have our custom made Recipe Creator. Create an account now!</p>
+			<h1>Welcome to VeganEats</h1>
+      <div class="columns is-mobile is-multiline is-centered">
+        <div class="column is-narrow">
+          <figure class="image is-128x128">
+            <img class="is-rounded" src="veggies.png">
+          </figure>
+        </div>
+        </div>
+      <img src = "homepage-welcome.jpg" alt = "Healthy Meal"> 
+      <p>Got recipes of your own you want to share?</p>
+      <p>Check out our Build Your Bite page and generate your recipes.</p>
+      <h2>Featured Recipes</h2>
+      <img src = "ve1-asparagus-pizza.jpg" alt = "Asparagus Pizza"> 
+      <p>Asparagus Pizza. Looks tasty!</p>
+
+      <div class="column">
+      <a href="signup.php" class = "button is-rounded">Create Your Account</a>
+    </div>
 		</div>
 	</section>
 </body>
@@ -73,11 +89,27 @@
   <section class = "footer">
       <h3>Social Media</h3>
 <div id = "social">
-<ul>
-<li><a href="#">Twitter</a></li>
-<li><a href="#">Instagram</a></li>
-</ul>
+
+  <div class="columns">
+  <div class="column">
+  <figure class="image is-32x32">
+  <img src="social-twitter.svg">
+</figure>
 </div>
+
+  <div class="column">
+  <figure class="image is-32x32">
+  <img src="social-instagram.svg">
+</figure>
+</div>
+</div>
+</div>
+
+  <div class="contact">
+    <h4 align="right">Contact Us</h4>
+    <p align="right">Email: veganEats@mail.com</p>
+    <p align="right">Tel: 1800-555-5555</p>
+    </div>
    </section>
 </html>
 <?php 

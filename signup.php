@@ -22,15 +22,12 @@
 </head>
 
 <body>
-  <header>
-    <img src="VeganEats logo.png" alt="VeganEats">
-  </header>
-
   <nav class = "navbar is-fixed-top">
     <div class ="container">
       <div class ="navbar-brand">
-        <a class="navbar-item" href = "index.php" style = "font-weight:bold;">VeganEats</a>
-
+        <a class="navbar-item" href = "index.php">
+          <img src = "navLogo.png" alt= "Logo">
+        </a>
         <span class="navbar-burger" data-target="navMenu">
           <span></span>
           <span></span>
@@ -40,43 +37,59 @@
       <div class="navbar-end"> 
       <a href="ve_aboutus.html" class = "navbar-item">About Us</a> 
       <a href="vegan.php" class = "navbar-item">Vegan Recipes</a> 
-      <a href="v2-vegetarian.php" class = "navbar-item">Vegetarian Recipes</a> 
+      <a href="vegetarian.php" class = "navbar-item">Vegetarian Recipes</a> 
       <a href="glutenfree.php" class = "navbar-item">Gluten Free Recipes</a> 
-      <a href="ve_makeyourown.html" class = "navbar-item">Build Your Bite</a> 
+      <a href="builder.php" class = "navbar-item">Build Your Bite</a> 
       <a href="ve_faq.html" class = "navbar-item">FAQ</a> 
-      <a href="ve_contactus.html" class = "navbar-item">Contact Us</a> 
-      <a href="ve_login.html" class = "navbar-item">Log In</a> 
+      <a href="signup.php" class = "navbar-item">Sign Up</a> 
       </div>
     </div>
   </div>  
 </nav>
      
    <section class = "article">
+    <header id = "hero">
+    <img src="VeganEats logo.png" alt="VeganEats" id="hero-image">
+  </header>
 	<section class="main-container">
-		<div class="main-wrapper">
-			<h2>Signup</h2>
+		<div class="main-text">
+      <h1>Join our hungry crew today!</h1>
 			<ul>
 			<form class="signup-form" action="includes/signup.inc.php" method="POST">
-				<li><input type="text" name="first" placeholder="Firstname"></li>
-				<li><input type="text" name="last" placeholder="Lastname"></li>
-				<li><input type="text" name="email" placeholder="E-mail"></li>
-				<li><input type="text" name="uid" placeholder="Username"></li>
-				<li><input type="password" name="pwd" placeholder="Password"></li>
-				<button type="submit" name="submit">Sign up</button>
+				<li><input class="input" type="text" name="first" placeholder="Firstname"></li>
+				<li><input class="input" type="text" name="last" placeholder="Lastname"></li>
+				<li><input class="input" type="text" name="email" placeholder="E-mail"></li>
+				<li><input class="input" type="text" name="uid" placeholder="Username"></li>
+				<li><input class="input" type="password" name="pwd" placeholder="Password"></li>
+				<button class = "button is-rounded" type="submit" name="submit">Sign up</button>
+        <a href="/reset-password.php"><button class = "button is-rounded">Forgot Password</a>
 			</form>
 			</ul>
 		</div>
 		</section>
 	</section>
-	  <footer>
-	<h3>Social Media</h3>
-		<nav>
-		<ul>
-		<li><a href="#">Twitter</a></li>
-		<li><a href="#">Instagram</a></li>
-		</ul>
-		</nav>
-</footer>
+  
+	  <!-- footer -->
+   <section class = "footer">
+      <h3>Social Media</h3>
+  <div id = "social">
+    <div class="columns">
+
+    <div class="column">
+    <figure class="image is-32x32">
+    <img src="social-twitter.svg">
+  </figure>
+  </div>
+
+    <div class="column">
+    <figure class="image is-32x32">
+    <img src="social-instagram.svg">
+  </figure>
+  </div>
+
+  </div>
+  </div>
+     </section>
 </body>
 </html>
 

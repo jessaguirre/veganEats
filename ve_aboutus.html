@@ -20,16 +20,13 @@
 
 
 <body>
-  <header>
-    <img src="VeganEats logo.png" alt="VeganEats">
-  </header>
-
   <nav class = "navbar is-fixed-top">
     <div class ="container">
       <div class ="navbar-brand">
-        <a class="navbar-item" href = "index.php" style = "font-weight:bold;">VeganEats</a>
-
-        <span class="navbar-burger" data-target="navMenu">
+        <a class="navbar-item" href = "index.php">
+          <img src = "navLogo.png" alt= "Logo">
+        </a>
+        <span class="navbar-burger burger" data-target="navMenu">
           <span></span>
           <span></span>
         </span>
@@ -38,32 +35,59 @@
       <div class="navbar-end"> 
       <a href="ve_aboutus.html" class = "navbar-item">About Us</a> 
       <a href="vegan.php" class = "navbar-item">Vegan Recipes</a> 
-      <a href="v2-vegetarian.php" class = "navbar-item">Vegetarian Recipes</a> 
+      <a href="vegetarian.php" class = "navbar-item">Vegetarian Recipes</a> 
       <a href="glutenfree.php" class = "navbar-item">Gluten Free Recipes</a> 
-      <a href="ve_makeyourown.html" class = "navbar-item">Build Your Bite</a> 
+      <a href="builder.php" class = "navbar-item">Build Your Bite</a> 
       <a href="ve_faq.html" class = "navbar-item">FAQ</a> 
-      <a href="ve_contactus.html" class = "navbar-item">Contact Us</a> 
-      <a href="ve_login.html" class = "navbar-item">Log In</a> 
+      <a href="signup.php" class = "navbar-item">Sign Up</a> 
       </div>
     </div>
-  </div>  
-</nav>
+  </div>
+  </nav>
 
 <section class = "article">
+  <header id = "hero">
+    <img src="VeganEats logo.png" alt="VeganEats" id="hero-image">
+  </header>
+  <div class="main-text">
   <h1>About VeganEats</h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices mi tempus imperdiet nulla malesuada pellentesque elit eget. Vel risus commodo viverra maecenas accumsan lacus vel. Proin fermentum leo vel orci porta. Egestas congue quisque egestas diam in. Et netus et malesuada fames ac turpis egestas integer. Euismod elementum nisi quis eleifend quam. Est placerat in egestas erat imperdiet sed. In hac habitasse platea dictumst. Vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Aliquam ultrices sagittis orci a scelerisque purus semper eget. Commodo quis imperdiet massa tincidunt. Facilisi cras fermentum odio eu feugiat. Semper auctor neque vitae tempus quam pellentesque nec nam. Elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Pharetra et ultrices neque ornare aenean. Integer malesuada nunc vel risus commodo viverra maecenas.</p>
+  <p>VeganEats is a website dedicated to the love of vegan, vegetarian and gluten free food. Whether for health, moral or other reasons, we hope you find some tasty new dishes to add to your dining table. Please be polite when leaving comments, and enjoy our delicious selection of recipes</p> 
+  <h2>Humble Beginnings</h2>
+  <img src = "homepage-welcome.jpg" alt = "Healthy Meal"> 
+  <p>VeganEats was started as a university project that utilizes original front and back end code. Every page is fully customized by our team to fit the nature based aesthetic. We hope in coming years to improve this website to better connect people who love fine, healthy food.</p>
+  <h3>Our Mission</h3>
+  <img class="is-rounded" src="our-mission.jpg">
+  <p>Our mission here at VeganEats is to showcase delicious vegan, vegetarian and gluten free food options and inspire our users to try making their own. Our Build Your Bite featured attraction allows users to experiment and post their own recipes on our website for others to rate and comment on. We hope you enjoy your stay.</p>
+</div>
 </section>
 
 
 
   <!-- footer -->
- <footer>
+<section class = "footer">
       <h3>Social Media</h3>
-    <nav>
-      <ul>
-         <li><a href="#">Twitter</a></li>
-         <li><a href="#">Instagram</a></li>
-     </ul>
-    </nav>
-   </footer>
+<div id = "social">
+
+  <div class="columns">
+  <div class="column">
+  <figure class="image is-32x32">
+  <img src="social-twitter.svg">
+</figure>
+</div>
+
+  <div class="column">
+  <figure class="image is-32x32">
+  <img src="social-instagram.svg">
+</figure>
+</div>
+</div>
+</div>
+
+  <div class="contact">
+    <h4 align="right">Contact Us</h4>
+    <p align="right">Email: veganEats@mail.com</p>
+    <p align="right">Tel: 1800-555-5555</p>
+    </div>
+   </section>
+
 </html>

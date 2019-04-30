@@ -1,0 +1,161 @@
+@charset "utf-8";
+
+// Import a Google Font
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+
+
+
+// brand colors
+    $seagreen: #82b1a5;
+    $body-color: #354045;
+    $green: #B6D88F;
+    $green-bg: #94b76c;
+    $light-green: #d3f2b0;
+    $dark-green: #44661f;
+    $yellow: #efea53; 
+    $blue: #7ebfdd;
+    $primary: $green;
+    $link: $yellow;
+    $white: #ffff;
+    $body-background-color: $light-green;
+    $control-border-width: 2px;
+    $input-border-color: transparent;
+    $input-shadow: none;
+    $footer-bg: #e2e2e2;
+    $card-shadow: 0 2px 3px rgba(#000000, 0.1), 0 0 0 1px rgba(#000000, 0.1) !default;
+
+
+$padding: 15px; 
+$borders: 15px;
+
+
+header {
+        background-color: $green;
+        text-decoration: none;
+        padding: 0em;
+        display: block;
+        }
+    .hero{
+        @mixin desktop {
+            @media screen and (min-width: $desktop){
+            @content
+            }
+        }
+    }
+
+    img#hero-image{
+            min-width: 100%;
+    }
+
+        .navbar.is-fixed-top {  
+            background-color: $green;
+            
+            a:hover {
+            background-color: $seagreen;
+            color: ivory; 
+            }
+        }
+
+body, html {
+    height: 100%;
+}
+
+    .main-text{
+        background-color: $light-green;
+        
+        h1 {
+            font-size: 2.1em;
+            // max-width: 500px;
+            padding: 14px;
+            color: $dark-green;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.1em;
+            // max-width: 500px;
+            //padding: 14px;
+            color: $dark-green;
+            font-weight: bold;
+            //text-align: center;
+        }
+    }
+    .builder{
+    background: $green;
+    margin: 0 auto;
+    
+    #builder-body{
+    	padding: 1em;
+        text-align: center;
+    #text{
+        margin: .55em;
+    }    
+    #sortable1{
+     list-style-type: none;
+     float: left;
+     margin: 10px;
+     background: $yellow;
+     padding: 0;
+     width: 22em;
+    }
+    #sortable2 {
+     list-style-type: none;
+     float: left;
+     margin: 0 auto;
+     background: $yellow;
+     padding: 0;
+     width: 22em;
+    }
+	#sortable1 li{
+     background: $light-green;
+     margin: 1em 0;
+     padding: 0px;
+     font-size: 1.2em;
+     width: 100%;
+     text-align: center;   
+    }
+    #sortable2 li {
+     background: $light-green;
+     margin: 1em 0;
+     padding: 0px;
+     font-size: 1.2em;
+     width: 100%;
+     text-align: center;
+        }
+	}
+    textarea{
+            display: block;
+            max-width: 100%;
+            min-width: 100%;
+            padding: .625em;
+            resize: none;
+            height: 5em;
+            margin-top: 1em;
+            background-color: honeydew;
+        }
+    }
+    
+    .card{
+        .card-header-title{
+            background-color: $light-green;
+            font-size: 1.77em;
+            width: 100%;
+            //padding: 1em;
+            font-weight: bold;
+            color: $dark-green;
+        }
+        .card-content{
+            background-color: $light-green;
+            input#name.input{
+            max-width: 13em;
+            }
+            select{
+                height: 3.25em;
+            }
+            input#recipeImage.button{
+                max-width: 14em;
+            }
+        }
+    }
+

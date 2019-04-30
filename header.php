@@ -7,20 +7,16 @@
 <head>
 	<meta charset="UTF-8">
 	<!-- <title>login system</title> -->
-	<link rel="stylesheet" type="text/css" href="style1.css">
+	<link href="css/main.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
 </head>
 <body>
 	
 	<header id="header" class="">
 		<nav>
 			<div class="main-wrapper">
-				<ul>
-					<li><a href="index.php" title="">Home</a></li>
-				</ul>
 				<div class="nav-login">
-				<a href= "#"
-				class="forgot">forgot password?
-				</a>
+				<!-- <a href= "#"class="forgot">forgot password?</a> -->
 					<?php
 						if (isset($_SESSION['u_id'])) {
 							echo '<form action="includes/logout.inc.php" method="POST">
@@ -31,8 +27,7 @@
 									<input type="text" name="uid" placeholder="Username/e-mail">
 									<input type="password" name="pwd" placeholder="password">
 									<button type="submit" name="submit">Login</button>
-									</form>
-									<a href="signup.php">Sign up</a>';
+									</form>';
 						}
 					?>
 				</div>

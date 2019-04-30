@@ -2,11 +2,13 @@
 
 //fetch_comment.php
 
-$connect = new PDO('mysql:host=localhost;dbname=comment', 'root', '');
+$connect = new PDO('mysql:host=localhost;dbname=loginsystem', 'phpmyadmin', 'VeganOcean2k19');
+
+$id = $_POST['id'];
 
 $query = "
-SELECT * FROM tbl_comment 
-ORDER BY comment_id DESC
+SELECT * FROM tbl_comment t
+WHERE t.recipe_name = '$id'
 ";
 
 $statement = $connect->prepare($query);

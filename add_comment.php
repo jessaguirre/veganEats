@@ -2,20 +2,17 @@
 
 //add_comment.php
 
-$connect = new PDO('mysql:host=localhost:3306;dbname=comment', 'root', '');
+
+session_start();
+
+$connect = new PDO('mysql:host=localhost:3306;dbname=loginsystem', 'phpmyadmin', 'VeganOcean2k19');
+
+// $connect = new PDO('mysql:host=localhost;dbname=loginsystem', 'root', 'root');
+
 
 $error = '';
-$comment_name = '';
 $comment_content = '';
 
-if(empty($_POST["comment_name"]))
-{
- $error .= '<p class="text-danger">Name is required</p>';
-}
-else
-{
- $comment_name = $_POST["comment_name"];
-}
 
 if(empty($_POST["comment_content"]))
 {
@@ -33,17 +30,17 @@ if($error == '')
         
         $query = "
         INSERT INTO tbl_comment 
-        (comment_id, recipe_name, rating, comment, comment_sender_name) 
-        VALUES (:comment_id, :recipe_name, :rating, :comment, :comment_sender_name)
+        (comment_id, user_username ,recipe_name, rating, comment) 
+        VALUES (:comment_id, :user_username ,:recipe_name, :rating, :comment)
         ";
         $statement = $connect->prepare($query);
         $statement->execute(
          array(
           ':comment_id' => $_POST["comment_id"],
-          ':recipe_name' => $_POST["selected_recipe"],
+          ':user_username' => $_SESSION["u_uid"],
+          ':recipe_name' => $_POST["recipe-select"],
           ':rating' => $rating[0],
-          ':comment' => $comment_content,
-          ':comment_sender_name' => $comment_name
+          ':comment' => $comment_content
          )
         );
         $error = '<label class="text-success">Comment Added</label>';

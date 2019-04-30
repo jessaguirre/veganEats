@@ -1,239 +1,311 @@
+<?php
+  session_start();
+?>
+
 <!doctype html>
 <html>
 <head>
 <!--
-    Home Page (v2-vegetarian.php)
-    Author: Nicole Blanco
-    Date:   1/31/19
-    Edited: Jessica Aguirre
+    Custom Recipe Page (veggie_recipe.php)
+    Author: Jessica Aguirre
+
    -->
 
    <meta charset="utf-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <title>VeganEats</title>
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-   <link href="css/main.css" rel="stylesheet">
+   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+   <link href="css/recipe.css" rel="stylesheet">
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
 </head>
 
 
 <body>
-  <header>
-    <img src="VeganEats logo.png" alt="VeganEats">
-  </header>
-
-  <nav class = "navbar is-fixed-top">
+	<nav class = "navbar is-fixed-top">
     <div class ="container">
       <div class ="navbar-brand">
-        <a class="navbar-item" href = "index.php" style = "font-weight:bold;">VeganEats</a>
-
-        <span class="navbar-burger" data-target="navMenu">
+        <a class="navbar-item" href = "index.php">
+          <img src = "navLogo.png" alt= "Logo" width="105" height="28">
+        </a>
+        <span class="navbar-burger burger" data-target="navMenu">
           <span></span>
           <span></span>
         </span>
       </div>
     <div id="navMenu" class="navbar-menu">
-      <div class="navbar-end"> 
-      <a href="ve_aboutus.html" class = "navbar-item">About Us</a> 
-      <a href="vegan.php" class = "navbar-item">Vegan Recipes</a> 
-      <a href="v2-vegetarian.php" class = "navbar-item">Vegetarian Recipes</a> 
-      <a href="glutenfree.php" class = "navbar-item">Gluten Free Recipes</a> 
-      <a href="ve_makeyourown.html" class = "navbar-item">Build Your Bite</a> 
-      <a href="ve_faq.html" class = "navbar-item">FAQ</a> 
-      <a href="ve_contactus.html" class = "navbar-item">Contact Us</a> 
-      <a href="ve_login.html" class = "navbar-item">Log In</a> 
+      <div class="navbar-end">
+      <a href="ve_aboutus.html" class = "navbar-item">About Us</a>
+      <a href="vegan.php" class = "navbar-item">Vegan Recipes</a>
+      <a href="vegetarian.php" class = "navbar-item">Vegetarian Recipes</a>
+      <a href="glutenfree.php" class = "navbar-item">Gluten Free Recipes</a>
+      <a href="builder.php" class = "navbar-item">Build Your Bite</a>
+      <a href="ve_faq.html" class = "navbar-item">FAQ</a>
+      <a href="signup.php" class = "navbar-item">Sign Up</a>
       </div>
     </div>
-  </div>  
-</nav>
+  </div>
+  </nav>
 
+	   <section class = "article">
+      <header id = "hero">
+      <img src="VeganEats logo.png" alt="VeganEats" id="hero-image">
+      </header>
+	   	<h1>Check Out Our Featured Vegan Dishes</h1>
 
-  <section class = "article">
-    <div class="gluten-free">
-      <ul class="gluten-free-ul-class">
-        <li class="gluten-free-li-class"></li>
-      </ul>
-          <h1> Vegan Recipes </h1>
-          <!--8 Gluten Free Recipes will go below this line. Create a box for each one for now.-->
-          <dl id="recipes-box">
-            
-          </dl> 
-          <dl id="rating-box"></dl> 
-          <dl id="comment-box"></dl>
+<div class="card-content">
+    <div class="media">
+      <div class="media-center">
+        <figure class="image is-square">
+          <img id="rec_image" alt="Loading Image...">
+        </figure>
+      </div>
     </div>
-  
+      <div class="media-content">
+        <h3 id="recipe_title">Loading Title...</h3>
+        <div id="recipe_desc">Loading Description...</div>
+      </div>
 
-  <h2>Comment on a Recipe</h2>
-  <br/>
-  <div class="container">
+      <h2>Rate and Leave a Comment!</h2>
+  <!-- <div class="container"> -->
+    <div class="main-text">
+      <div class="control">
    <form method="POST" id="comment_form">
-    <div class="form-group">
-     <input type="text" name="comment_name" id="comment_name" class="form-control" placeholder="Enter Name" />
+   <select id="recipe-select" name="recipe-select" class="select" onchange="change_recipe()"></select>
     </div>
-       <div class="form-group">
-        <select name="selected_recipe" id="ddlViewBy">
-        </select>
-       </div>
-        <div class="form-group">
-            <select name="rating" id="ratingViewBy">
-            </select>
+        <div id="starContainer">
+            <i id="star1" class="fa fa-star"></i>
+            <i id="star2" class="fa fa-star-o star"></i>
+            <i id="star3" class="fa fa-star-o star"></i>
+            <i id="star4" class="fa fa-star-o star"></i>
+            <i id="star5" class="fa fa-star-o star"></i>
         </div>
-       
+
     <div class="form-group">
-     <textarea name="comment_content" id="comment_content" class="form-control" placeholder="Enter Comment" rows="5"></textarea>
+     <textarea class="textarea has-fixed-size" name="comment_content" id="comment_content" class="form-control" placeholder="Comment on a recipe here!" rows="5"></textarea>
     </div>
     <div class="form-group">
      <input type="hidden" name="comment_id" id="comment_id" value="0" />
-     <input type="submit" name="submit" id="submit" class="btn btn-info" value="Submit" />
+     <input type="submit" name="submit" id="submit" class="button" value="Submit"/>
     </div>
-   </form>
    <span id="comment_message"></span>
-   <br />
    <div id="display_comment"></div>
-  </div>
-  </section>
+   </div>
+</div>
+ </section>
  </body>
 
+<br>
+<br>
+<h1 style="font-size: 1.33em">Google Searches for "vegan" Have Gained Massive Interest.</h1>
+<h2 style="font-size: 1.2em">Check out the stats below:</h2>
+<script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/1754_RC01/embed_loader.js"></script> <script type="text/javascript"> trends.embed.renderExploreWidget("GEO_MAP", {"comparisonItem":[{"keyword":"vegan","geo":"US","time":"2012-01-01 2018-01-01"},{"keyword":"vegetarian","geo":"US","time":"2012-01-01 2018-01-01"},{"keyword":"gluten free","geo":"US","time":"2012-01-01 2018-01-01"}],"category":0,"property":""}, {"exploreQuery":"date=2012-01-01%202018-01-01&geo=US&q=vegan,vegetarian,gluten%20free","guestPath":"https://trends.google.com:443/trends/embed/"}); </script> 
+
   <!-- footer -->
- <footer>
+ <section class = "footer">
       <h3>Social Media</h3>
-    <nav>
-      <ul>
-         <li><a href="#">Twitter</a></li>
-         <li><a href="#">Instagram</a></li>
-     </ul>
-    </nav>
-   </footer>
+<div id = "social">
+
+  <div class="columns">
+  <div class="column">
+  <figure class="image is-32x32">
+  <img src="social-twitter.svg">
+</figure>
+</div>
+
+  <div class="column">
+  <figure class="image is-32x32">
+  <img src="social-instagram.svg">
+</figure>
+</div>
+</div>
+</div>
+
+  <div class="contact">
+    <h4 align="right">Contact Us</h4>
+    <p align="right">Email: veganEats@mail.com</p>
+    <p align="right">Tel: 1800-555-5555</p>
+    </div>
+   </section>
 </html>
 
 <script>
 $(document).ready(function(){
    //Object that is used to fill the "recipes-box" and "ddlViewBy"
-   var selectValues = {
-          'Vegan_Mac_and_Cheese': 'Super Healthy',
-          'Spring_Vegetable_Lo_Mein': 'Veggilicious',
-          'Butternut_Squash_Linguine': 'Creamy and delicious',
-          'Vegan_Burrito_Bowl': 'Super easy and flavorful'
-        };
-        
-        //The ID of the DL that is used to put the Recipes in       
-        var recipesbox = $('#recipes-box');
-        //# means id
-        //The ID of the select where the recipies need to go into
-        var recipesSelectBox = $('#ddlViewBy');
-          
-          //Foreach loop that loops throught the Object that contains the deired values to write
-          $.each(selectValues, function(key,value) {
-          //This sdds the "DT" tags in the recipesbox, and filles them with the key "The left part of the object" for both the ID and the text
-            var id = key.replace(" ", "");
-            
-            recipesbox.append(
-                $('<div></div>')
-                .attr("id", id)
-                .attr("class", "recipe_div")
-            );
-              $('#'+id).append(
-                $('<dt></dt>')
-              .text(key)
-            );
-          //This adds the "DD" tags below the "DT" tags that are created above with the value "The right part of the object" for the text of the "DD"
-            $('#'+id).append(
-                $('<dd></dd>')
-              .text(value)
-            );
-    
-            recipesSelectBox.append(
-                $('<option></option>')
-                .attr("value",key.trim())
-              .text(key)
-                  );
-          });
+  $(".star").mouseenter((e) => {
+	const count = $(e.target).attr("id").match(/\d+/)[0];
 
-        //Object that is used to fill the "recipes-box" and "ddlViewBy"
-      var ratingValues = {
-          '5 Stars':'5 Stars',
-          '4 Stars':'4 Stars',
-          '3 Stars':'3 Stars',
-          '2 Stars':'2 Stars',
-          '1 Stars':'1 Stars'
-        };
-        
-      //The ID of the DL that is used to put the Recipes in       
-      var ratingbox = $('#rating-box');
-      
-      //The ID of the select where the recipies need to go into
-      var ratingSelectBox = $('#ratingViewBy');
-        
-        //Foreach loop that loops throught the Object that contains the deired values to write
-        $.each(ratingValues, function(key,value) {   
-        //Adds options to the select value
-              ratingSelectBox.append(
-                $('<option></option>')
-                .attr("value",key.trim())
-              .text(key)
-          );
+		if ($(e.target).hasClass("fa-star-o")) {
+			for (var countup = 0; countup <= count; countup++) {
+				$("#star"+countup).removeClass("fa-star-o");
+			  $("#star"+countup).addClass("fa-star");
+			}
+		}
+		else {
+			for (var countdown = 5; countdown >= count; countdown--) {
+				$("#star"+countdown).removeClass("fa-star");
+				 $("#star"+countdown).addClass("fa-star-o");
+			 }
+		 }
+	});
+
+
+	$('#comment_form').on('submit', function(event){
+		event.preventDefault();
+		var form_data = $(this).serialize();
+
+		const stars = $("#starContainer").children();
+		var ammountOfFilledInStars = 0;
+
+		for (var i = 0; i < stars.length; i++) {
+			if ($(stars[i]).hasClass("fa-star")) {
+			ammountOfFilledInStars = $(stars[i]).attr("id").match(/\d+/)[0]
+			}
+		 }
+		form_data += "&rating=" + ammountOfFilledInStars;
+		console.log('form data: '+form_data);
+		$.post({
+			type: "POST",
+			url:"add_comment.php",
+			data:form_data,
+			success:function(data)
+			{
+				console.log('return data: '+data);
+				if(data.error != '')
+				{
+					$('#comment_form')[0].reset();
+					$('#comment_message').html(data.error);
+					$('#comment_id').val('0');
+				}
+			}
+		});
+	});
+
+	$(document).on('click', '.reply', function(){
+		var comment_id = $(this).attr("id");
+		$('#comment_id').val(comment_id);
+	});
+
+});
+
+
+//Create drop down option for every recipe
+$.ajax({
+
+    url: "recipePHP/fetch_vegan.php",
+    method: "GET",
+    dataType: 'json',
+    success: function(data) {
+        data.forEach(function(sql_recipe) {
+
+            var key = sql_recipe['recipe_id'];
+            var value = sql_recipe['recipe_title'];
+
+            $('#recipe-select').append('<option value="' + key + '">' + value + '</option>');
+
         });
- 
-      $('#comment_form').on('submit', function(event){
-        event.preventDefault();
-        var form_data = $(this).serialize();
-        
-        $.ajax({
-        url:"add_comment.php",
-        method:"POST",
-        data:form_data,
-        dataType:"JSON",
-        success:function(data)
-        {
-            console.log(data);
-          if(data.error != '')
-          {
-          $('#comment_form')[0].reset();
-          $('#comment_message').html(data.error);
-          $('#comment_id').val('0');
-          load_comment();
-          }
-        }
-        })
-      });
+        //Load newest recipe
+        change_recipe();
+    }
+});
 
- load_comment();
- 
- function load_comment()
- {
+//Load new info on changing recipe
+function change_recipe(){
+
+  var select = document.getElementById("recipe-select");
+  var id = select.value
+
   $.ajax({
+
+  url: "recipePHP/get_recipe_byID.php",
+  method: "POST",
+  data: {id : id},
+  dataType: 'json',
+  success: function(data) {
+      data.forEach(function(sql_recipe) {
+
+          var title = sql_recipe['recipe_title'];
+          document.getElementById("recipe_title").innerHTML = title;
+      });
+  }
+  });
+
+//Set image
+$.ajax({
+
+url: "recipePHP/get_image_byID.php",
+method: "POST",
+data: {id : id},
+dataType: 'json',
+success: function(data) {
+    data.forEach(function(sql_recipe) {
+        document.getElementById("rec_image").src = "uploadedImages/" + id + "/" + sql_recipe['image_name']
+    });
+}
+});
+
+$.ajax({
+
+url: "recipePHP/get_desc_byID.php",
+method: "POST",
+data: {id : id},
+dataType: 'json',
+success: function(data) {
+  document.getElementById("recipe_desc").innerHTML = "";
+    data.forEach(function(sql_recipe) {
+
+      var node = document.createElement("LI");
+      var textnode = document.createTextNode(sql_recipe['ingredient_name'] + ": " + sql_recipe['description']);
+      node.appendChild(textnode);
+      document.getElementById("recipe_desc").appendChild(node);
+    });
+}
+});
+
+
+//Load comments
+var recipeID = document.getElementById("display_comment")
+document.getElementById("display_comment").innerHTML = ""
+$.ajax({
    url:"fetch_comment.php",
    method:"POST",
+   data: {id : id},
    dataType: 'json',
    success:function(data)
    {
-       data.forEach(function(recipe){
-              var recipeID = $("#"+recipe['recipe_name'].replace(" ", "")); //removes spaces
-              
-            recipeID.append(
-              $('<dt></dt>')
-              .text(recipe["comment_sender_name"])
-            );
-            recipeID.append(
-             $('<dt></dt>')
-              .text(recipe["comment"])
-            );
-             recipeID.append(
-                $('<dd></dd>')
-              .text(recipe['rating'])
-            ); 
+       data.forEach(function(comment){
+              console.log(comment['comment_id'])
+
+
+              var node = document.createElement("LI");
+              var textnode = document.createTextNode(comment["user_username"] + ": " + comment["comment"]);
+              node.appendChild(textnode);
+
+            recipeID.appendChild(node);
+
+             for (var i = 1; i <= comment['rating']; i++) {
+
+                var newtag = document.createElement("i");
+                newtag.classList.add('fa');
+                 newtag.classList.add('fa-star');
+                 recipeID.appendChild(newtag);
+
+
+            }
+
+            if ((comment['rating'] - 5) != 0) {
+                for (var i = comment['rating']; i < 5; i++) {
+                  var newtag = document.createElement("i");
+                newtag.classList.add('fa');
+                 newtag.classList.add('fa-star-o');
+                 recipeID.appendChild(newtag);
+                }
+            }
+
        });
    }
   });
- }
- 
-$(document).on('click', '.reply', function(){
-  var comment_id = $(this).attr("id");
-  $('#comment_id').val(comment_id);
-  $('#comment_name').focus();
- });
-});
-</script>
+}
 
+</script>

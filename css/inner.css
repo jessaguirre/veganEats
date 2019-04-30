@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,700");
+body, html {
+  height: 100%; }
+
+.recipe-select {
+  text-align: center; }
+
+img#hero-image {
+  min-width: 100%; }
+
+.navbar.is-fixed-top {
+  background-color: #B6D88F; }
+  .navbar.is-fixed-top a:hover {
+    background-color: #82b1a5;
+    color: ivory; }
+
+.nav-login {
+  color: #4a4a4a;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 3.2em 0px 0 0; }
+  .nav-login form {
+    text-align: right; }
+    .nav-login form input {
+      margin: 1.3em 3em 1.3em -2.5em; }
+    .nav-login form button {
+      margin: 1.3em 5.5em 1.3em -2.5em; }
+
+.article {
+  font-family: inherit;
+  background-color: #d3f2b0; }
+  .article .container {
+    margin: 0 10px;
+    position: relative; }
+  .article h1 {
+    font-size: 2.1em;
+    padding: 14px;
+    color: #44661f;
+    font-weight: bold;
+    text-align: center; }
+  .article .card-content {
+    background-color: #efea53;
+    max-width: 30em;
+    margin: 0 auto;
+    text-align: center; }
+    .article .card-content .media {
+      text-align: center;
+      display: block; }
+    .article .card-content li {
+      font-size: 1.42em;
+      max-width: 16em; }
+    .article .card-content p {
+      font-size: 1.3em;
+      display: inline-flex;
+      padding: 14px; }
+    .article .card-content h2 {
+      font-size: 1.9em;
+      max-width: 500px;
+      padding: 14px;
+      font-weight: bold; }
+    .article .card-content h3 {
+      font-size: 1.6em;
+      max-width: 500px;
+      padding: 14px;
+      text-align: center;
+      font-weight: bold;
+      color: #44661f; }
+    .article .card-content h4 {
+      font-size: 1.4em;
+      max-width: 500px;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+      color: #94b76c; }
+  .article .card-content2 {
+    background-color: #efea53;
+    max-width: 30em;
+    margin: 0 auto;
+    text-align: center; }
+    .article .card-content2 li {
+      font-size: 1.42em;
+      max-width: 16em; }
+    .article .card-content2 p {
+      font-size: 1.3em;
+      display: inline-flex;
+      padding: 14px; }
+    .article .card-content2 h2 {
+      font-size: 1.9em;
+      max-width: 500px;
+      padding: 14px;
+      font-weight: bold; }
+
+.main-text {
+  margin-inline-start: 2em; }
+  .main-text .input, .main-text .textarea {
+    background-color: #fff;
+    border-color: #dbdbdb;
+    color: #363636;
+    box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
+    min-width: 0;
+    width: 28%; }
+  .main-text .form-group {
+    padding: 0.3em; }
+  .main-text .select {
+    box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
+    width: 100%;
+    max-width: 14em;
+    height: 2.25em;
+    font-size: 1em; }
+  .main-text #starContainer {
+    box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
+    background-color: #f3f082;
+    max-width: 5.75em;
+    margin-left: 6px; }
+
+.fa {
+  color: forestgreen; }
+
+section.footer {
+  background-color: #82b1a5; }
+  section.footer h3 {
+    font-size: 1.6em;
+    max-width: 500px;
+    padding: 14px;
+    font-weight: bold;
+    color: white; }
+  section.footer nav {
+    padding: 0px 14px; }
+  section.footer .columns {
+    margin-left: .80rem; }
+  section.footer .column {
+    flex-basis: 0;
+    flex-grow: 0;
+    flex-shrink: 1;
+    padding: 0.55rem; }

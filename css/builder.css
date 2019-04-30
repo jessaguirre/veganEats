@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,700");
+header {
+  background-color: #B6D88F;
+  text-decoration: none;
+  padding: 0em;
+  display: block; }
+
+img#hero-image {
+  min-width: 100%; }
+
+.navbar.is-fixed-top {
+  background-color: #B6D88F; }
+  .navbar.is-fixed-top a:hover {
+    background-color: #82b1a5;
+    color: ivory; }
+
+body, html {
+  height: 100%; }
+
+.main-text {
+  background-color: #d3f2b0; }
+  .main-text h1 {
+    font-size: 2.1em;
+    padding: 14px;
+    color: #44661f;
+    font-weight: bold;
+    text-align: center; }
+  .main-text h2 {
+    font-size: 1.1em;
+    color: #44661f;
+    font-weight: bold; }
+
+.builder {
+  background: #B6D88F;
+  margin: 0 auto; }
+  .builder #builder-body {
+    padding: 1em;
+    text-align: center; }
+    .builder #builder-body #text {
+      margin: .55em; }
+    .builder #builder-body #sortable1 {
+      list-style-type: none;
+      float: left;
+      margin: 10px;
+      background: #efea53;
+      padding: 0;
+      width: 22em; }
+    .builder #builder-body #sortable2 {
+      list-style-type: none;
+      float: left;
+      margin: 0 auto;
+      background: #efea53;
+      padding: 0;
+      width: 22em; }
+    .builder #builder-body #sortable1 li {
+      background: #d3f2b0;
+      margin: 1em 0;
+      padding: 0px;
+      font-size: 1.2em;
+      width: 100%;
+      text-align: center; }
+    .builder #builder-body #sortable2 li {
+      background: #d3f2b0;
+      margin: 1em 0;
+      padding: 0px;
+      font-size: 1.2em;
+      width: 100%;
+      text-align: center; }
+  .builder textarea {
+    display: block;
+    max-width: 100%;
+    min-width: 100%;
+    padding: .625em;
+    resize: none;
+    height: 5em;
+    margin-top: 1em;
+    background-color: honeydew; }
+
+.card .card-header-title {
+  background-color: #d3f2b0;
+  font-size: 1.77em;
+  width: 100%;
+  font-weight: bold;
+  color: #44661f; }
+
+.card .card-content {
+  background-color: #d3f2b0; }
+  .card .card-content input#name.input {
+    max-width: 13em; }
+  .card .card-content select {
+    height: 3.25em; }
+  .card .card-content input#recipeImage.button {
+    max-width: 14em; }

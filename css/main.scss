@@ -5,6 +5,7 @@
 
 
 // brand colors
+    $seagreen: #82b1a5;
     $body-color: #354045;
     $green: #B6D88F;
     $green-bg: #94b76c;
@@ -23,28 +24,70 @@
     $card-shadow: 0 2px 3px rgba(#000000, 0.1), 0 0 0 1px rgba(#000000, 0.1) !default;
 
 
+$lg: max-width 1499px;
+$md: max-width 1199px;
+$sm: max-width 1023px;
+$mobile: max-width 479px;
+
 $padding: 15px; 
 $borders: 15px;
 
 
-
-$desktop: 840px;
-
-@mixin desktop {
-    @media (max-width: 840px) {
-        @content;
+header {
+        background-color: $green;
+        text-decoration: none;
+        padding: 0em;
+        display: block;
+        }
+    .hero{
+        @mixin desktop {
+            @media screen and (min-width: $desktop){
+            @content
+            }
+        }
     }
-}
+
+    img#hero-image{
+            min-width: 100%;
+    }
+
+        .navbar.is-fixed-top {  
+            background-color: $green;
+        
+        a:hover {
+            background-color: $seagreen;
+            color: ivory; 
+        }
+    }
+
+        .nav-login{
+            color: #4a4a4a;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            margin: 3.2em 0px 0 0;
+           
+           form{
+            text-align: right;
+           input{
+            margin: 1.3em 3em 1.3em -2.5em;
+            }
+
+            button{
+                margin: 1.3em 5.5em 1.3em -2.5em;
+            }
+            }
+        }
 
 body, html {
     height: 100%;
 }
 
-.article, .recipe-description {
+.article, .recipe_div {
     font-family: 'Montserrat';
-    //margin: 0;
+    
     background-color: $light-green;
-    //text-align: center;
+    
     .container {
         margin: 0 10px;
         position: relative;
@@ -58,81 +101,122 @@ body, html {
         }
         
         p {
-            font-size: 1em;
-            display: inline-flex;
-            padding: 14px;
+            font-size: 1.38em;
+            //display: inline-flex;
+            padding: 0.5em 2em;
+            text-align: center;
+            
+            a {
+            color: $blue;
+            text-decoration: underline;
+            //font-weight: bold;
+            display: block;
+            //text-align: center;
+        }
             
         }
 
         h1 {
             font-size: 2.1em;
-            max-width: 500px;
+            // max-width: 500px;
             padding: 14px;
             color: $dark-green;
             font-weight: bold;
+            text-align: center;
         }
 
         h2 {
             font-size: 1.9em;
-            max-width: 500px;
+            // max-width: 500px;
             padding: 14px;
             font-weight: bold;
+            text-align: center;
             
         }
         h3 {
             font-size: 1.6em;
-            max-width: 500px;
+            // max-width: 500px;
             padding: 14px;
             text-align: center;
             font-weight: bold;
             color: $dark-green;
-        }
-          a {
-            color: $blue;
-            border-radius: $borders;
-            text-decoration: none;
-            font-weight: bold;
-            display: block;
             text-align: center;
-            margin: 5px auto 0 auto;
-
-            @include desktop {
-                display: inline-block;
-                //padding: $padding $padding * 4;
-            }
+        }
+        h4 {
+            font-size: 1.4em;
+            // max-width: 500px;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            color: $green-bg;
+        }
+        a {
+            color: $blue;
+            text-decoration: underline;
+            font-weight: bold;
+            //display: block;
+            //text-align: center;
         }
         
     }
 
-    header {
+    .main-text{
+        margin-inline-start: 2em;
+        //display: inline-block;
+        text-align: center;
+        .input {
+            background-color: #fff;
+            border-color: #dbdbdb;
+            color: #363636;
+            box-shadow: inset 0 1px 2px rgba(10,10,10,.1);
+            min-width: 0;
+            width: 28%;
+            margin: 0.15em;
+        }
+        .signup-form{
+          padding: 0.3em;
+        }
+        button.is-rounded{
+            margin: .5em;
+        }
+    }
+    .faq-text{
+        padding: 1em;
         background-color: $light-green;
-        text-decoration: none;
-        padding: 0em;
-        display: block;
+        text-align: left;
+        h1 {
+            font-size: 2.1em;
+            // max-width: 500px;
+            padding: 14px;
+            color: $dark-green;
+            font-weight: bold;
+        }
+        ol{
+            margin: 2em;
+        }
+        li{
+            font-size: 1.53em;
+            padding: 14px;
+            font-weight: bold;
+            color: $dark-green;
+            text-decoration:underline;
+        }
+        p{
+            text-align: left;
+        }
     }
 
-    .navbar.is-fixed-top {
-        background-color: yellowgreen;
-    .navbar-menu {
-        //margin: 0 10px;
-        background-color: $green-bg;
-        
-      .navbar-item {
-        font-weight: bold;
-        background-color: $green;
-      }
-
-      .has-dropdown .navbar-item {
-        text-transform: none;
-        background-color: $green;
-      }
-
-      .container {
-          margin: 0 10px;
-          position: relative;
-      }
-    }
-}
+        .hvr-pop{
+                margin: .4em;
+                    padding: .2em 2em;
+                    font-weight: bold;
+                    cursor: pointer;
+                    background: #e1e1e1;
+                    text-decoration: none;
+                    color: $blue;
+                    -webkit-tap-highlight-color: rgba(0,0,0,0);
+                    -webkit-font-smoothing: antialiased;
+            }
 
     .recipe-description{
     background-color: $green;
@@ -141,66 +225,43 @@ body, html {
     .media-left {
         margin: 1rem 2rem;
     }
+    .columns{
+        margin-left: 1em;
+        
+        .column{
+        flex-basis: 0;
+        //flex-grow: 0;
+        flex-shrink: 1;
+        padding: 0.55rem;
+        display: flex;
+        justify-content: center;
+        }
+    }
 
-    footer{
-        background-color: $footer-bg;
+    section.footer{
+        background-color: $seagreen;
         
          h3 {
             font-size: 1.6em;
             max-width: 500px;
             padding: 14px;
             font-weight: bold;
-            color: $dark-green;
+            color: white;
         }
 
         nav{
             padding: 0px 14px;
         }
-    }
 
-    dl#recipes-box {
-      display: inline-block;
-      margin: 0 4.2em;
-      position: relative;
-      border: 2px outset;
-      box-shadow: $card-shadow;
-    }
+        .columns{
+            margin-left: .80rem;
+        }
 
-    dt {
-      font-size: 1.48em;
-      color: $green-bg;
-      max-width: 500px;
-      padding: 8px;
-      font-weight: bold;  
-      text-align: left;
-      text-decoration: underline;
-      margin-right: 1em;
-      line-height: 2;
-      background-color: $yellow;
-      
-    }
-
-    dd {
-      font-size: 1.15em;
-      //max-width: 500px;
-      padding: 8px;
-      font-weight: bold;  
-      text-align: left;
-      margin-right: 1em;
-      line-height: 2;
-      background-color: $yellow;
-    }
-
-    #comment_content {
-      resize: none;
-    }
-
-    .recipes{
-        background-color: $yellow;
-        box-shadow: $card-shadow;
-        max-width: 100%;
-        position: relative;
-        padding: 1.5rem;
-        line-height: 2;
-        display: inline-block;
+        .column {
+        //display: block;
+        flex-basis: 0;
+        flex-grow: 0;
+        flex-shrink: 1;
+        padding: 0.55rem;
+        }
     }
