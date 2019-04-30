@@ -8,6 +8,8 @@
 
       <?php
       
+      /* Checking to see if it can process the request */
+      
       $selector = $_GET['selector'];
       $validator = $_GET['validator'];
 
@@ -18,6 +20,8 @@
         
         if (ctype_xdigit( $selector ) !== false && ctype_xdigit( $validator ) !== false) {
           ?>
+      
+      <!-- The form for creating the new password -->
 
           <form class="form-resetpwd" action="includes/reset-password.inc.php" method="post">
             <input type="hidden" name="selector" value="<?php echo $selector ?>">
