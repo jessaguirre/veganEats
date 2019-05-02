@@ -1,3 +1,4 @@
+//Author: Jessica Aguirre
 @charset "utf-8";
 
 // Import a Google Font
@@ -28,7 +29,7 @@
 $padding: 15px; 
 $borders: 15px;
 
-
+//styling header
 header {
         background-color: $green;
         text-decoration: none;
@@ -42,14 +43,14 @@ header {
             }
         }
     }
-
+	//responsive hero
     img#hero-image{
             min-width: 100%;
     }
-
+	//fixed navbar
         .navbar.is-fixed-top {  
             background-color: $green;
-            
+            //hover effect
             a:hover {
             background-color: $seagreen;
             color: ivory; 
@@ -59,7 +60,7 @@ header {
 body, html {
     height: 100%;
 }
-
+//general styling of main body
     .main-text{
         background-color: $light-green;
         
@@ -107,6 +108,7 @@ body, html {
      padding: 0;
      width: 22em;
     }
+//draggable features
 	#sortable1 li{
      background: $light-green;
      margin: 1em 0;
@@ -135,7 +137,7 @@ body, html {
             background-color: honeydew;
         }
     }
-    
+    //Card Feature
     .card{
         .card-header-title{
             background-color: $light-green;
