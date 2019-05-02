@@ -1,3 +1,5 @@
+//Author: Jessica Aguirre
+// Inner Recipe Pages template
 @charset "utf-8";
 
 // Import a Google Font
@@ -33,7 +35,7 @@ $borders: 15px;
         @content;
     }
 }
-
+//general body styling
 body, html {
     height: 100%;
 }
@@ -73,7 +75,7 @@ body, html {
             }
             }
         }
-
+//general body styling
 .article {
     font-family: inherit;
     //margin: 0;
@@ -91,6 +93,7 @@ body, html {
             font-weight: bold;
             text-align: center;
         }
+    //main card content
     .card-content{
         background-color: $yellow;
         max-width: 32em;
@@ -153,7 +156,7 @@ body, html {
           height: 2.25em;
           font-size: 1em;
         }
-
+        //star system styling
         #starContainer{
             box-shadow: inset 0 1px 2px rgba(10,10,10,.1);
             background-color: lighten( $yellow, 10% );
@@ -170,7 +173,7 @@ body, html {
    .fa{
        color: forestgreen;
    }
-
+//footer styling
   section.footer{
         background-color: $seagreen;
         
